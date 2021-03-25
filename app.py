@@ -1,6 +1,5 @@
 
 import os
-from subprocess import check_output, STDOUT
 import jinja2.ext
 import dash_core_components as dcc
 import dash_html_components as html
