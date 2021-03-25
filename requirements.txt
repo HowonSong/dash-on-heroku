@@ -54,7 +54,6 @@ Pillow==8.1.2
 plotly==4.14.3
 psutil==5.8.0
 psycopg2==2.8.6
-py2exe==0.10.3.0
 pycparser==2.20
 pyinstaller @ https://github.com/pyinstaller/pyinstaller/archive/develop.zip
 pyinstaller-hooks-contrib==2021.1
