@@ -8,6 +8,7 @@ from dash.dependencies import Output, Input
 import plotly 
 import plotly.graph_objs as go
 from collections import deque
+from random import randint
 import pymysql
 import pandas as pd  
 
