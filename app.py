@@ -16,8 +16,8 @@ old=[0]
 accum_w=deque(maxlen = 5)
 accum_c=deque(maxlen = 5)
 
-
-app = dash.Dash(__name__)
+app = dash.Dash(threaded=False)
+server = app.server
 app.layout = html.Div( 
     [
         html.Label('Dataset'),
