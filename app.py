@@ -103,7 +103,8 @@ def update_graph_scatter(n,dataset):
     return {'data': [data,data1],'layout':layout}
 
 if __name__ == '__main__':
-    app.run_server()
+    port = int(os.environ.get("PORT", 5000))
+    app.run_server(port=port)
 
 
 
