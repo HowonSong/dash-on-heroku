@@ -65,7 +65,6 @@ plotly==4.14.3
 prompt-toolkit==3.0.18
 psutil==5.8.0
 psycopg2==2.8.6
-py2exe==0.10.3.0
 pycparser==2.20
 pyelftools==0.27
 Pygments==2.8.1
