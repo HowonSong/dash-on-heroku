@@ -16,7 +16,7 @@ old=[0]
 accum_w=deque(maxlen = 5)
 accum_c=deque(maxlen = 5)
 
-app = dash.Dash(threaded=False)
+app = dash.Dash()
 server = app.server
 app.layout = html.Div( 
     [
@@ -102,7 +102,8 @@ def update_graph_scatter(n,dataset):
                       yaxis2 = dict(title = 'Credit (TZS)',range = [0,1000],overlaying='y1',side='right'))
     return {'data': [data,data1],'layout':layout}
 
-
+if __name__ == '__main__':
+    app.run_server()
 
 
 
