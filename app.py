@@ -11,12 +11,12 @@ from collections import deque
 from random import randint
 import pymysql
 import pandas as pd  
-
+import flask
 
 old=[0]
 accum_w=deque(maxlen = 5)
 accum_c=deque(maxlen = 5)
-server = app.server
+server = flask.Flask(__name__)
 server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 app = dash.Dash(__name__, server=server)
 app.layout = html.Div( 
