@@ -8,7 +8,6 @@ from dash.dependencies import Output, Input
 import plotly 
 import plotly.graph_objs as go
 from collections import deque
-from random import randint
 import pymysql
 import pandas as pd  
 import flask
@@ -16,9 +15,8 @@ import flask
 old=[0]
 accum_w=deque(maxlen = 5)
 accum_c=deque(maxlen = 5)
-server = flask.Flask(__name__)
-server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
-app = dash.Dash(__name__, server=server)
+server = app.server
+app = dash.Dash(__name__)
 app.layout = html.Div( 
     [
         html.Label('Dataset'),
@@ -104,7 +102,7 @@ def update_graph_scatter(n,dataset):
     return {'data': [data,data1],'layout':layout}
 
 if __name__ == '__main__':
-    app.server.run(debug=True, threaded=True)
+    app.run_server(debug=True)
 
 
 
