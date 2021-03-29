@@ -15,9 +15,9 @@ import pandas as pd
 old=[0]
 accum_w=deque(maxlen = 5)
 accum_c=deque(maxlen = 5)
-
-app = dash.Dash()
 server = app.server
+server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
+app = dash.Dash(__name__, server=server)
 app.layout = html.Div( 
     [
         html.Label('Dataset'),
@@ -103,8 +103,7 @@ def update_graph_scatter(n,dataset):
     return {'data': [data,data1],'layout':layout}
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run_server(port=port)
+    app.server.run(debug=True, threaded=True)
 
 
 
